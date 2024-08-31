@@ -1,0 +1,11 @@
+import itertools as it
+
+def soles(n,s):
+  Omega = list(it.product("AS", repeat=n))  #n es el número de lanzamientos
+  res = [om for om in Omega if om.count('S') >= s] #s es el número de soles que se buscan en mayor o igual
+  p = len(res) / len(Omega)
+  return res, p
+
+n = int(input("¿Cuantas veces se lanzará la moneda? ")) 
+s = int(input("¿Al menos cuantos soles busca? "))
+print(soles(n,s))
